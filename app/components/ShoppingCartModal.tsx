@@ -66,17 +66,21 @@ export default function ShoppingCartModal() {
 					</div>
 
 					<div className='border-t border-gray-200 px-4 py-6 sm:px-6'>
-						<div className='flex justify-between text-base font-medium text-gray-900'>
-							<p>Sous-total:</p>
-							<p>${totalPrice}</p>
-						</div>
-						<p className='mt-0.5 text-sm text-gray-500'>Frais de livraison et taxes calculées à la caisse.</p>
+						{cartCount !== 0 && (
+							<>
+								<div className='flex justify-between text-base font-medium text-gray-900'>
+									<p>Sous-total:</p>
+									<p>${totalPrice}</p>
+								</div>
+								<p className='mt-0.5 text-sm text-gray-500'>Frais de livraison et taxes calculées à la caisse.</p>
+							</>
+						)}
 
-						<div className='mt-6 flex justify-end items-center gap-3'>
+						<div className={`mt-6 flex ${cartCount !== 0 ? 'justify-end' : 'justify-center'} items-center gap-3`}>
 							<button onClick={() => handleCartClick()} className=' font-medium hover:text-primary/80'>
 								Retour au magasin
 							</button>
-							<Button onClick={handleCheckoutClick}>Passer à la caisse</Button>
+							{cartCount !== 0 && <Button onClick={handleCheckoutClick}>Passer à la caisse</Button>}
 						</div>
 					</div>
 				</div>

@@ -29,7 +29,7 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
 	const productData: productDetails = await getProductData(params.slug);
 
 	return (
-		<section className='bg-white'>
+		<section className='bg-white py-[2%]'>
 			<div className='mx-auto max-w-screen-xl px-4 md:px-8'>
 				<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
 					<ImageGallery images={productData.images} />

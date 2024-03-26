@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from './components/Navbar';
 import CartProvider from './components/Providers';
 import ShoppingCartModal from './components/ShoppingCartModal';
+import Footer from '@/app/components/Footer';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -21,9 +22,12 @@ export default function RootLayout({
 		<html lang='fr_ca'>
 			<body className={montserrat.className}>
 				<CartProvider>
-					<Navbar />
-					<ShoppingCartModal />
-					{children}
+					<div className='flex flex-col min-h-screen'>
+						<Navbar />
+						<ShoppingCartModal />
+						<main className='flex-grow flex flex-col justify-center'>{children}</main>
+						<Footer />
+					</div>
 				</CartProvider>
 			</body>
 		</html>

@@ -6,12 +6,12 @@ import { usePathname } from 'next/navigation';
 import { FaShopware } from 'react-icons/fa6';
 import { BiSolidShoppingBagAlt } from 'react-icons/bi';
 import { useShoppingCart } from 'use-shopping-cart';
+import { DropdownCategories } from './Dropdown';
 
 const links = [
 	{ name: 'Accueil', href: '/' },
-	{ name: 'Homme', href: '/Homme' },
-	{ name: 'Femme', href: '/Femme' },
-	{ name: 'Enfant', href: '/Enfant' },
+	{ name: 'À Propos', href: '/About' },
+	{ name: 'Nous Joindre', href: '/Contact' },
 ];
 
 const Navbar = () => {
@@ -40,6 +40,7 @@ const Navbar = () => {
 							<Link href={link.href}>{link.name}</Link>
 						</div>
 					))}
+					<DropdownCategories />
 				</nav>
 				<div className='flex'>
 					<Button

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { categoryImages, simplifiedProduct } from '../interface';
-import { client } from '../lib/sanity';
+import { simplifiedProduct } from '../../interface';
+import { client } from '../../lib/sanity';
 import Image from 'next/image';
 
 // Function to fetch the category data from Sanity.io
@@ -15,8 +15,20 @@ const CategoryPage = async ({ params }: { params: { category: string } }) => {
 	// Fetching the data from Sanity.io
 	const categoryData: simplifiedProduct[] = await getCategoryData(params.category);
 
+	const headerImageStyles = {
+		backgroundImage: `url(/images/${params.category}.jpg)`,
+		height: '550px',
+		width: '100vw',
+		backgroundSize: 'cover',
+		backgroundRepeat: 'no-repeat',
+		backgroundPosition: 'bottom',
+		marginTop: '-35px',
+	};
+
 	return (
 		<section className='bg-white'>
+			<div style={headerImageStyles}></div>
+
 			<div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8'>
 				<div className='flex justify-between items-center'>
 					<h2 className='text-3xl font-bold tracking-tight text-gray-900'>
@@ -25,7 +37,7 @@ const CategoryPage = async ({ params }: { params: { category: string } }) => {
 				</div>
 				<div className='mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
 					{categoryData.map((product) => (
-						<div key={product._id}>
+						<Link href={`/product/${product.slug}`} key={product._id} className='hover:opacity-80 transition duration-300'>
 							<div className='aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80'>
 								<Image
 									src={product.imageUrl}
@@ -44,7 +56,7 @@ const CategoryPage = async ({ params }: { params: { category: string } }) => {
 									<p className='text-md text-primary font-medium'>{`$${product.price.toFixed(2)}`}</p>
 								</div>
 							</div>
-						</div>
+						</Link>
 					))}
 				</div>
 			</div>

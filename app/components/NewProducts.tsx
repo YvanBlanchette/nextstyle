@@ -21,7 +21,7 @@ const NewProducts = async () => {
 					<h2 className='text-3xl font-bold tracking-tight text-gray-900'>
 						Nos <span className='text-primary'>derniers produits</span>
 					</h2>
-					<Link href={'/all'} className='text-primary flex items-center gap-x-1 font-medium opacity-70 hover:opacity-100 transition duration-300'>
+					<Link href={'/category/all'} className='text-primary flex items-center gap-x-1 font-medium opacity-100 hover:opacity-80 transition duration-300'>
 						Voir tous les Produits{' '}
 						<span>
 							<LuChevronRight />
@@ -42,8 +42,8 @@ const NewProducts = async () => {
 							</div>
 							<div className='mt-4 flex justify-between items-baseline'>
 								<div>
-									<h3 className='text-md font-medium text-gray-900'>{product.name}</h3>
-									<p className='text-sm text-gray-500'>{product.categoryName}</p>
+									<h3 className='text-[1rem] font-semibold text-gray-900 tracking-tighter'>{product.name}</h3>
+									<p className='text-xs text-gray-500'>{product.categoryName}</p>
 								</div>
 								<div>
 									<p className='text-md text-primary font-medium'>{`$${product.price.toFixed(2)}`}</p>
