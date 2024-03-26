@@ -54,7 +54,7 @@ const Footer = () => {
 						<ul>
 							<li>
 								<Link href='/' className='text-sm text-stone-300 hover:text-stone-100 transition duration-300'>
-									Conditions d'utilisation
+									Conditions d&apos;utilisation
 								</Link>
 							</li>
 							<li>

@@ -11,7 +11,7 @@ const ConfirmationPage = () => {
 					<h1 className='text-5xl'>Confirmation de commande</h1>
 				</div>
 				<p className='text-center text-gray-600'>
-					Merci, votre commande à bien été reçu et vous sera acheminé d'ici 2 à 4 jours.
+					Merci, votre commande à bien été reçu et vous sera acheminé d&apos;ici 2 à 4 jours.
 					<br /> Un courriel de confirmation vous a été envoyé.
 				</p>
 				<Button asChild>

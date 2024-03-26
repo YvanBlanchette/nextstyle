@@ -23,7 +23,7 @@ export default function ShoppingCartModal() {
 		<Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
 			<SheetContent className='sm:max-w-lg w-[90vw]'>
 				<SheetHeader>
-					<SheetTitle>Panier d'achats</SheetTitle>
+					<SheetTitle>Panier d&apos;achats</SheetTitle>
 				</SheetHeader>
 
 				<div className='h-full flex flex-col justify-between'>
