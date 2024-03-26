@@ -7,6 +7,7 @@ import { FaShopware } from 'react-icons/fa6';
 import { BiSolidShoppingBagAlt } from 'react-icons/bi';
 import { useShoppingCart } from 'use-shopping-cart';
 import { DropdownCategories } from './Dropdown';
+import { BsList } from 'react-icons/bs';
 
 const links = [
 	{ name: 'Accueil', href: '/' },
@@ -42,7 +43,7 @@ const Navbar = () => {
 					))}
 					<DropdownCategories />
 				</nav>
-				<div className='flex'>
+				<div className='flex justify-end items-center gap-4'>
 					<Button
 						onClick={() => handleCartClick()}
 						variant={'ghost'}
@@ -51,6 +52,9 @@ const Navbar = () => {
 						<BiSolidShoppingBagAlt className='text-primary text-3xl' />
 						<p className='text-gray-900 font-semibold hidden sm:block'>Voir Panier</p>
 					</Button>
+					<button className='inline-block lg:hidden h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 bg-transparent'>
+						<BsList className='text-3xl' />
+					</button>
 				</div>
 			</div>
 		</header>
