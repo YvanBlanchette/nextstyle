@@ -12,6 +12,7 @@ export interface productDetails {
 	name: string;
 	images: any;
 	price: number;
+	price_id: string;
 	slug: string;
 	categoryName: string;
 	description: string;

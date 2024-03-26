@@ -4,33 +4,33 @@ import { Button } from '@/components/ui/button';
 import { useShoppingCart } from 'use-shopping-cart';
 import { urlFor } from '../lib/sanity';
 
-export interface AddToCartProps {
+export interface ProductCart {
 	name: string;
 	description: string;
 	price: number;
 	currency: string;
-	image: string;
+	image: any;
+	price_id: string;
 }
 
-const AddToCart = ({ currency, description, image, name, price }: AddToCartProps) => {
+export default function AddToCart({ currency, description, image, name, price, price_id }: ProductCart) {
 	const { addItem, handleCartClick } = useShoppingCart();
+
 	const product = {
-		id: 'gsdfjk',
 		name: name,
 		description: description,
-		image: urlFor(image).url(),
 		price: price,
 		currency: currency,
+		image: urlFor(image).url(),
+		price_id: price_id,
 	};
-
 	return (
 		<Button
 			onClick={() => {
 				addItem(product), handleCartClick();
 			}}
 		>
-			Ajouter au Panier
+			Ajouter au panier
 		</Button>
 	);
-};
-export default AddToCart;
+}

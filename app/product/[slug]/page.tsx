@@ -9,7 +9,7 @@ import { RiStarSFill } from 'react-icons/ri';
 
 //Function to fetch the product data from Sanity.io
 const getProductData = async (slug: string) => {
-	const query = `* [_type == 'product' && slug.current == "${slug}"][0] { _id, images, price, name, description, article, color, "slug": slug.current, "categoryName": category -> name,}`;
+	const query = `* [_type == 'product' && slug.current == "${slug}"][0] { _id, images, price, name, description, article, color, "slug": slug.current, "categoryName": category -> name, price_id}`;
 	const data = await client.fetch(query, {}, { next: { revalidate: 3600 } });
 	return data;
 };
@@ -70,14 +70,23 @@ const ProductPage = async ({ params }: { params: { slug: string } }) => {
 
 						<div className='flex gap-2.5'>
 							<AddToCart
-								currency='CAD'
+								currency='USD'
 								description={productData.description}
-								name={productData.name}
 								image={productData.images[0]}
+								name={productData.name}
 								price={productData.price}
 								key={productData._id}
+								price_id={productData.price_id}
 							/>
-							<CheckoutNow />
+							<CheckoutNow
+								currency='CAD'
+								description={productData.description}
+								image={productData.images[0]}
+								name={productData.name}
+								price={productData.price}
+								key={productData._id}
+								price_id={productData.price_id}
+							/>
 						</div>
 					</div>
 				</div>
