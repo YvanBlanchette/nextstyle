@@ -17,12 +17,15 @@ const AllProductsPage = () => {
 	return (
 		<section className='bg-white mb-24'>
 			<div style={headerImageStyles}></div>
-			<div className='max-w-[1200px] mx-auto'>
-				<div className='flex justify-between items-center mb-6'>
-					<h2 className='text-3xl font-bold tracking-tight text-gray-900'>
+			<div className='max-w-[1200px] mx-auto px-6'>
+				<div className='flex justify-center lg:justify-between items-center mb-6'>
+					<h2 className='text-2xl lg:text-3xl font-bold tracking-tight text-gray-900'>
 						Nos produits pour <span className='text-primary'>Hommes</span>
 					</h2>
-					<Link href={'/category/Homme'} className='text-primary flex items-center gap-x-1 font-medium opacity-100 hover:opacity-80 transition duration-300'>
+					<Link
+						href={'/category/Homme'}
+						className='hidden lg:flex text-primary items-center gap-x-1 font-medium opacity-100 hover:opacity-80 transition duration-300'
+					>
 						Voir tous les Produits{' '}
 						<span>
 							<LuChevronRight />
@@ -31,10 +34,13 @@ const AllProductsPage = () => {
 				</div>
 				<ProductCarousel category='Homme' />
 				<div className='flex justify-between items-center mt-12 mb-6'>
-					<h2 className='text-3xl font-bold tracking-tight text-gray-900'>
+					<h2 className='text-2xl lg:text-3xl font-bold tracking-tight text-gray-900'>
 						Nos produits pour <span className='text-primary'>Femmes</span>
 					</h2>
-					<Link href={'/category/Femme'} className='text-primary flex items-center gap-x-1 font-medium opacity-100 hover:opacity-80 transition duration-300'>
+					<Link
+						href={'/category/Femme'}
+						className='hidden lg:flex  text-primary items-center gap-x-1 font-medium opacity-100 hover:opacity-80 transition duration-300'
+					>
 						Voir tous les Produits{' '}
 						<span>
 							<LuChevronRight />
@@ -43,10 +49,13 @@ const AllProductsPage = () => {
 				</div>
 				<ProductCarousel category='Femme' />
 				<div className='flex justify-between items-center mt-12 mb-6'>
-					<h2 className='text-3xl font-bold tracking-tight text-gray-900'>
+					<h2 className='text-2xl lg:text-3xl font-bold tracking-tight text-gray-900'>
 						Nos produits pour <span className='text-primary'>Enfants</span>
 					</h2>
-					<Link href={'/category/Enfant'} className='text-primary flex items-center gap-x-1 font-medium opacity-100 hover:opacity-80 transition duration-300'>
+					<Link
+						href={'/category/Enfant'}
+						className='hidden lg:flex text-primary items-center gap-x-1 font-medium opacity-100 hover:opacity-80 transition duration-300'
+					>
 						Voir tous les Produits{' '}
 						<span>
 							<LuChevronRight />

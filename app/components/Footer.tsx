@@ -8,8 +8,8 @@ const Footer = () => {
 	return (
 		<>
 			<footer className='footer p-10 bg-stone-800/70 text-base-content'>
-				<div className='flex justify-between  mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl'>
-					<nav>
+				<div className='flex justify-between gap-6  mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl'>
+					<nav className='hidden lg:block'>
 						<h6 className='text-md uppercase font-medium text-primary'>Catégories</h6>
 						<ul>
 							<li>
@@ -72,7 +72,7 @@ const Footer = () => {
 				</div>
 			</footer>
 			<footer className='py-4 border-t bg-stone-800/70 text-base-content border-stone-400'>
-				<div className='flex justify-between items-center mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl'>
+				<div className='flex flex-col gap-2 lg:flex-row justify-between items-center mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl'>
 					<Link href='/' className='flex items-center text-2xl sm:text-4xl gap-2'>
 						<FaShopware className='text-primary' />
 						<h1 className='font-bold text-stone-100'>
@@ -88,7 +88,7 @@ const Footer = () => {
 							<p className='text-stone-100 text-sm'>Copyright {year} - Tous droits réservés</p>
 						</div>
 					</div>
-					<nav className='md:place-self-center md:justify-self-end'>
+					<nav className='hidden lg:flex md:place-self-center md:justify-self-end'>
 						<div className='flex gap-4 justify-end items-center'>
 							<Link href='https://www.facebook.com' target='_blank' className='text-stone-100 text-4xl hover:text-primary transition duration-300'>
 								<BiLogoFacebook />
