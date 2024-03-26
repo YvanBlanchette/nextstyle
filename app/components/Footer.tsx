@@ -83,7 +83,10 @@ const Footer = () => {
 						<Link href='https://yvanblanchette.com' target='_blank' className='text-stone-100 text-sm  hover:opacity-80 transition duration-300'>
 							Une création de <span className='text-primary'>Yvan jr Blanchette</span>
 						</Link>
-						<p className='text-stone-100 text-sm'>&copy; Copyright {year} - Tous droits réservés</p>
+						<div className='flex justify-center items-center gap-1'>
+							<BiCopyright className='text-stone-100' />
+							<p className='text-stone-100 text-sm'>Copyright {year} - Tous droits réservés</p>
+						</div>
 					</div>
 					<nav className='md:place-self-center md:justify-self-end'>
 						<div className='flex gap-4 justify-end items-center'>
